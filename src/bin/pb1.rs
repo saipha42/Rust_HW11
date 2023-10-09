@@ -1,24 +1,23 @@
 
 
-
-
 fn main() {
 
-    let fox = "The quick brown fox jumps over the lazy dog.";
-    let para3 = "a\n\nb\n\nc";
-    let bustle = "a\n\nb\n\nc\nd\ne";
+    let str1 = "abc";
+    let str2 = "a\n\nb\n\nc";
+    let str3 = "a\n\nb\n\nc\nd\ne\n\nf";
 
 
-    let doc1 = make_document(fox); // 1 paragraph
-    let doc2 = make_document(bustle); // 2 paragraphs
-    let doc3 = make_document(para3); // 3 paragraphs
+    let doc1 = make_document(str1); // 1 paragraph
+    let doc2 = make_document(str2); // 2 paragraphs
+    let doc3 = make_document(str3); // 3 paragraphs
     let docs = vec![doc1.clone(), doc3.clone(), doc2.clone()];
     let rnk_docs = rank_documents(&docs);
+    println!("{:#?}", rnk_docs);
     assert_eq!(rnk_docs, [doc3, doc2, doc1]);
 
 }
 
-
+//Problem 1.1
 fn make_document(text : &str)-> Vec<String> {
 
     let mut paragraphs = Vec::new();
@@ -41,7 +40,7 @@ fn make_document(text : &str)-> Vec<String> {
     paragraphs
 }
 
-
+//Problem 1.2
 fn rank_documents( docs : &Vec<Vec<String>>) -> Vec<Vec<String>> {
 
     let mut docs = docs.clone();
@@ -53,7 +52,7 @@ fn rank_documents( docs : &Vec<Vec<String>>) -> Vec<Vec<String>> {
 
 
 #[test]
-fn test_para() {
+fn test_paragraph() {
     let fox = "The quick brown fox jumps over the lazy dog.";
     let para3 = "a\n\nb\n\nc";
     let bustle = "\

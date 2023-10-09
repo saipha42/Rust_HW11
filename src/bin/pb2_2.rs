@@ -1,5 +1,5 @@
 
-use std::{fs::File, io::Read};
+use std::{fs::File, io::{Read, Write}};
 
 
 fn main() {
@@ -35,7 +35,8 @@ fn main() {
     html.push_str("</table>");
     html.push_str("</body>");
 
-    println!("{}", html);
+    let mut html_file = File::create("html_2_2.html").unwrap();
+    html_file.write_all(html.as_bytes()).unwrap();
 }
 
 

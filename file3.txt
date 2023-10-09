@@ -1,13 +1,9 @@
-hi
-hello
+Hello
 
-jarvis 
-mark32
+Jarvis is 
 
-Tony
+Tony Stark's
 
-
-
-A
+AI Assistant 
 
 Pepper

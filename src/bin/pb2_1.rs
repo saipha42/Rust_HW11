@@ -1,11 +1,10 @@
-
-use std::{fs::File, io::Read};
-
+use std::{fs::File, io::{Read, Write}};
 
 fn main() {
 
     let file_list = ["file1.txt", "file2.txt", "file3.txt"];
     let mut docs = Vec::new();
+
     for path in file_list {
 
         let mut file = File::open(path).unwrap();
@@ -34,7 +33,9 @@ fn main() {
     html.push_str("</table>");
     html.push_str("</body>");
 
-    println!("{}", html);
+    let mut html_file = File::create("html_2_1.html").unwrap();
+    html_file.write_all(html.as_bytes()).unwrap();
+
 }
 
 
